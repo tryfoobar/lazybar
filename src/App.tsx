@@ -1,8 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  const [load, setLoad] = useState(false);
+
+  useEffect(() => {
+    if (load === false) return;
+
+    import("@commandbar/foobar")
+      .then(({ init }) => {
+        init("42424242", "test-org");
+        window.CommandBar.boot("test-user");
+      })
+      .catch((err) => {
+        console.warn("failed to load commandbar");
+        throw err;
+      });
+  }, [load]);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -12,11 +28,13 @@ function App() {
         </p>
         <a
           className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="#_"
+          onClick={(ev) => {
+            ev.preventDefault();
+            setLoad(true);
+          }}
         >
-          Learn React
+          Load CommandBar
         </a>
       </header>
     </div>

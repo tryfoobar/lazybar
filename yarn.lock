@@ -1151,6 +1151,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@commandbar/foobar@^0.2.11":
+  version "0.2.11"
+  resolved "https://registry.yarnpkg.com/@commandbar/foobar/-/foobar-0.2.11.tgz#a774efe5b1f783450fd85aa8e434ffac37016732"
+  integrity sha512-Za6ZYOtsLfQFHXxWROmGpnE3qrxOjIY3ccuDc+YZfgE3ra1ecQNgCOFU9r0Kx+IXfr1QYX/x59up50gPhiLEZw==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
