@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { initProxy } from 'commandbar';
+
+initProxy();
 
 function App() {
   const [load, setLoad] = useState(false);
+
+  console.log('Safely call and queue window.CommandBar methods before lazy import...', window.CommandBar.boot);
 
   useEffect(() => {
     if (load === false) return;
